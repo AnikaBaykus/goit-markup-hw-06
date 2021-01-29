@@ -325,6 +325,8 @@ p {
   width: 570px;
 }
 .form-in-footer {
+  display: flex;
+  justify-content: space-between;
 }
 
 .input-footer {
@@ -345,8 +347,31 @@ p {
   color: var(--contacts-text-color);
 }
 
-.button-footer {
+.btn-footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 200px;
+
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.88;
+  letter-spacing: 0.06em;
+
+  color: var(--page-color);
+  fill: var(--page-color);
+  background-color: var(--accent-text-color);
+  border-color: var(--accent-text-color);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  cursor: pointer;
 }
+
+.btn-icon-footer {
+  width: 24px;
+  height: 24px;
+  margin-left: 10px;
+}
+
 .container {
   margin-left: auto;
   margin-right: auto;
@@ -609,59 +634,6 @@ p {
   fill: var(--accent-text-color);
 }
 
-/* Модальное окно */
-
-.backdrop {
-  position: fixed;
-  top: 0;
-  right: 0;
-  z-index: 2;
-
-  width: 100%;
-  height: 100%;
-
-  background-color: var(--backdrop-color);
-}
-
-.backdrop.is-hidden {
-  opacity: 0;
-  pointer-events: none;
-}
-
-.modal {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-
-  width: 528px;
-  height: 581px;
-
-  background-color: var(--page-color);
-  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
-    0px 2px 1px rgba(0, 0, 0, 0.2);
-  border-radius: 4px;
-}
-
-.icon-off {
-  position: absolute;
-  top: 8px;
-  right: 8px;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 30px;
-  height: 30px;
-
-  border-radius: 50%;
-  border: 1px solid rgba(0, 0, 0, 0.1);
-  fill: var(--page-color-dark);
-}
-.icon-off svg {
-  width: 11px;
-  height: 11px;
-}
 /* ========/index.html======== */
 /* ======= Стили portfolio.html ====== */
 
@@ -805,4 +777,223 @@ p {
 
   color: var(--secondary-text-color);
 }
-/* =======/portfolio.html====== */ ;
+/* =======/portfolio.html====== */
+/* ==========Модальное окно======= */
+
+.backdrop {
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 2;
+
+  width: 100%;
+  height: 100%;
+
+  background-color: var(--backdrop-color);
+}
+
+.backdrop.is-hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.modal {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+
+  width: 528px;
+  height: 581px;
+  padding: 40px;
+
+  background-color: var(--page-color);
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+}
+
+.icon-off {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30px;
+  height: 30px;
+
+  border-radius: 50%;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  fill: var(--page-color-dark);
+  transition: fill var(--smooth-transition);
+}
+.icon-off svg {
+  width: 11px;
+  height: 11px;
+}
+
+.icon-off:hover,
+.icon-off:focus {
+  fill: var(--accent-text-color);
+}
+
+.modal-title {
+  margin-bottom: 12px;
+
+  font-size: 20px;
+  line-height: 1.15;
+  text-align: center;
+}
+.modal-form {
+  display: flex;
+  flex-direction: column;
+}
+.modal-label {
+  display: block;
+  flex-direction: column;
+  margin-bottom: 10px;
+
+  font-size: 12px;
+  line-height: 1.17;
+  letter-spacing: 0.01em;
+  color: var(--secondary-text-color);
+}
+
+.icon-imput {
+  position: relative;
+  display: flex;
+}
+
+.icon-imput svg {
+  position: absolute;
+  left: 12px;
+  bottom: 11px;
+
+  width: 18px;
+  height: 18px;
+  fill: var(--page-color-dark);
+  transition: fill var(--smooth-transition);
+}
+
+.modal-input {
+  width: 448px;
+  height: 40px;
+  margin-top: 4px;
+  padding: 11px 12px 11px 42px;
+
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  box-sizing: border-box;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: border-color var(--smooth-transition);
+}
+
+.modal-textarea {
+  width: 448px;
+  height: 120px;
+  margin-top: 4px;
+  margin-bottom: 20px;
+  padding: 12px 16px;
+
+  resize: none;
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  box-sizing: border-box;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: border-color var(--smooth-transition);
+}
+
+.modal-textarea::placeholder {
+  color: rgba(117, 117, 117, 0.5);
+}
+
+.modal-label:focus-within svg {
+  fill: var(--accent-text-color);
+}
+
+.modal-input:focus-within,
+.modal-textarea:focus-within {
+  border: 1px solid var(--accent-text-color);
+}
+
+.modal-input:hover,
+.modal-input:focus,
+.modal-textarea:hover,
+.modal-textarea:focus {
+  border: 1px solid var(--accent-text-color);
+}
+.modal-input:hover ~ .icon-imput svg,
+.modal-input:focus ~ .icon-imput svg {
+  fill: var(--accent-text-color);
+}
+
+.modal-terms {
+  display: flex;
+  align-items: center;
+  margin-bottom: 30px;
+
+  line-height: 1.71;
+
+  color: var(--secondary-text-color);
+}
+
+.modal-terms a {
+  color: var(--accent-text-color);
+  padding-left: 4px;
+}
+
+.standart-checkbox {
+  position: relative;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  clip: rect(0000);
+  overflow: hidden;
+}
+
+.modal-checkbox {
+  display: inline-block;
+
+  width: 16px;
+  height: 15px;
+  margin-left: 12px;
+  margin-right: 7px;
+
+  border: 2px solid;
+  border-radius: 2px;
+  border-color: var(--main-text-color);
+  background-color: var(--page-color);
+  transition: background-color var(--smooth-transition),
+    border-color var(--smooth-transition);
+}
+
+.standart-checkbox:checked + .modal-checkbox {
+  background-color: var(--accent-text-color);
+  border-color: var(--accent-text-color);
+  background-image: url('../img/icon-check.svg');
+  color: var(--page-color);
+  background-origin: border-box;
+}
+
+.btn-in-modal {
+  margin-left: auto;
+  margin-right: auto;
+  width: 200px;
+  height: 50px;
+
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.88;
+  letter-spacing: 0.06em;
+
+  color: var(--page-color);
+  background-color: var(--accent-text-color);
+  border-color: var(--accent-text-color);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+}
+/* ==========/Модальное окно======= */
