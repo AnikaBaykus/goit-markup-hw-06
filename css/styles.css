@@ -336,6 +336,7 @@ p {
 
   font-size: 16px;
   line-height: 1.25;
+  color: var(--contacts-text-color);
 
   border: 1px solid rgba(255, 255, 255, 0.3);
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
@@ -826,6 +827,7 @@ p {
 
   border-radius: 50%;
   border: 1px solid rgba(0, 0, 0, 0.1);
+  background-color: var(--page-color);
   fill: var(--page-color-dark);
   transition: fill var(--smooth-transition);
 }
@@ -860,21 +862,9 @@ p {
   letter-spacing: 0.01em;
   color: var(--secondary-text-color);
 }
-
-.icon-imput {
+.input-wrap {
   position: relative;
   display: flex;
-}
-
-.icon-imput svg {
-  position: absolute;
-  left: 12px;
-  bottom: 11px;
-
-  width: 18px;
-  height: 18px;
-  fill: var(--page-color-dark);
-  transition: fill var(--smooth-transition);
 }
 
 .modal-input {
@@ -888,6 +878,17 @@ p {
   border-radius: 4px;
   cursor: pointer;
   transition: border-color var(--smooth-transition);
+}
+
+.icon-input svg {
+  position: absolute;
+  left: 12px;
+  bottom: 11px;
+
+  width: 18px;
+  height: 18px;
+  fill: var(--page-color-dark);
+  transition: fill var(--smooth-transition);
 }
 
 .modal-textarea {
@@ -924,8 +925,8 @@ p {
 .modal-textarea:focus {
   border: 1px solid var(--accent-text-color);
 }
-.modal-input:hover ~ .icon-imput svg,
-.modal-input:focus ~ .icon-imput svg {
+.modal-input:hover ~ .icon-input svg,
+.modal-input:focus ~ .icon-input svg {
   fill: var(--accent-text-color);
 }
 
@@ -946,8 +947,8 @@ p {
 
 .standart-checkbox {
   position: relative;
-  width: 1px;
-  height: 1px;
+  width: 0px;
+  height: 0px;
   margin: -1px;
   border: 0;
   padding: 0;
